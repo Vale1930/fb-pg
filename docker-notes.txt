@@ -1,0 +1,20 @@
+FB
+
+docker run -d --rm --name firebird25 \
+  -p 3050:3050 \
+  -e ISC_PASSWORD=masterkey \
+  -v /home/$USER/Firebird_DB/:/firebird/data \
+  jacobalberty/firebird:2.5.9-sc
+
+
+
+pg 
+
+//Monta un contenedor que contiene Postgres y se configura con un user y password, database name and volume para persistir los datos, se especifica el puerto y la version
+docker run --rm --name postgres \
+  -e POSTGRES_USER=andrea \
+  -e POSTGRES_PASSWORD=Borita21 \
+  -e POSTGRES_DB=supermarket_DB \
+  -v /home/$USER/Postgres_DB:/var/lib/postgresql/data \
+  -p 5432:5432 \
+  -d postgres:latest
