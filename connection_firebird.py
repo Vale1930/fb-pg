@@ -1,17 +1,18 @@
 import fdb
 
+
 def conectar():
     """
     Devuelve una conexión activa a la base de datos Firebird.
     """
     try:
         con = fdb.connect(
-            host='192.168.1.11',
-            database='/firebird/data/PDVDATA_LAST.FDB',
-            user='sysdba',
-            password='masterkey',
+            host="127.0.0.1",
+            database="/firebird/data/PDVDATA_LAST.FDB",
+            user="sysdba",
+            password="masterkey",
             port=3050,
-            charset='UTF8'
+            charset="ISO8859_1",
         )
         return con
     except (Exception, IOError) as error:
